@@ -1,11 +1,188 @@
 <!doctype html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>天使 りん</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <!-- ハンバーガーメニューボタン -->
+    <header class="header">
+      <button class="hamburger" aria-label="メニューを開く">
+        <img src="img/hamburger.svg" alt="" width="30" height="20" />
+      </button>
+    </header>
+
+    <!-- メニューオーバーレイ -->
+    <nav class="menu-overlay">
+      <button class="menu-close" aria-label="メニューを閉じる">
+        <img src="img/close-button.svg" alt="" width="30" height="20" />
+      </button>
+      <div class="menu-overlay__inner">
+        <ul class="menu-overlay__list">
+          <li><a href="index.html">Top</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="#schedules">Schedule</a></li>
+        </ul>
+        <div class="menu-overlay__sns">
+          <a href="#" aria-label="X">
+            <img src="img/icon-x.svg" alt="X" width="39" height="40" />
+          </a>
+          <a href="#" aria-label="YouTube">
+            <img
+              src="img/icon-youtube.svg"
+              alt="YouTube"
+              width="40"
+              height="27"
+            />
+          </a>
+          <a href="#" aria-label="その他">
+            <img src="img/icon-other.svg" alt="" width="48" height="48" />
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ファーストビュー -->
+    <section class="hero">
+      <div class="hero__bg">
+        <img src="img/fv_bg.jpg" alt="" class="hero__bg-img" />
+      </div>
+      <div class="hero__content">
+        <img src="img/fv_main.png" alt="天使りん" class="hero__character" />
+        <img src="img/fv_logo.png" alt="Rin Amatsuka" class="hero__logo" />
+      </div>
+    </section>
+    <div class="wave wave--blue"></div>
+
+    <!-- プロフィール紹介 -->
+    <section class="intro">
+      <div class="intro__visual">
+        <img
+          src="img/main-visual_face.png"
+          alt="天使りん"
+          class="intro__character"
+        />
+      </div>
+      <h2 class="intro__name">天使 りん</h2>
+      <div class="intro__text">
+        <p>あなたの心に降臨🌟</p>
+        <p>現役大学生VTuberの天使 りんです！</p>
+      </div>
+      <a href="profile.html" class="btn btn--outline">SEE MORE</a>
+    </section>
+    <div class="wave wave--white"></div>
+
+    <!-- Videos -->
+    <section class="videos">
+      <div class="videos__inner">
+        <h2 class="section-title">Videos</h2>
+        <div class="videos__list">
+          <a href="#" class="videos__item">
+            <img
+              src="img/youtube_thumb2.jpg"
+              alt=""
+              class="videos__thumbnail"
+            />
+            <p class="videos__caption">ロミオとシンデレラ/天使りん(cover)</p>
+          </a>
+          <a href="#" class="videos__item">
+            <img
+              src="img/youtube_thumb2.jpg"
+              alt=""
+              class="videos__thumbnail"
+            />
+            <p class="videos__caption">ロミオとシンデレラ/天使りん(cover)</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="wave wave--base"></div>
+
+    <!-- Schedules -->
+    <section class="schedules" id="schedules">
+      <h2 class="section-title">Schedules</h2>
+      <div class="schedules__list">
+        <div class="schedules__item">
+          <p class="schedules__date">6月5日(金) 20:00 ~ 22:00</p>
+          <p class="schedules__content">ポーカーチェイス @YouTube Live</p>
+        </div>
+        <div class="schedules__item">
+          <p class="schedules__date">6月14日(日) 20:00 ~ 22:00</p>
+          <p class="schedules__content">VALORANT @YouTube Live</p>
+        </div>
+        <div class="schedules__item">
+          <p class="schedules__date">6月21日(日) 20:00 ~ 22:00</p>
+          <p class="schedules__content">雑談 @YouTube Live</p>
+        </div>
+      </div>
+      <a
+        href="https://www.youtube.com/@-amatukarin1126"
+        class="schedules__subscribe"
+        target="_blank"
+      >
+        <img
+          src="img/play-icon.svg"
+          alt=""
+          class="schedules__play-icon"
+          width="13"
+          height="15"
+        />
+        <span>Subscribe YouTube</span>
+      </a>
+    </section>
+    <div class="wave wave--white"></div>
+
+    <!-- Contact -->
+    <section class="contact">
+      <h2 class="section-title">Contact Rin</h2>
+      <div class="contact__inner">
+        <a href="contact.html" class="btn btn--contact">お問い合わせフォーム</a>
+        <p class="contact__note">案件＆コラボ大募集中です！</p>
+      </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="footer">
+      <h2 class="footer__name">天使 りん</h2>
+      <div class="footer__inner">
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="index.html">Top</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="#schedules">Schedule</a></li>
+          </ul>
+        </nav>
+        <div class="footer__divider"></div>
+        <div class="footer__links">
+          <ul>
+            <li><a href="#">天使 りん / YouTube</a></li>
+            <li><a href="#">天使 りん (VTuber) / X</a></li>
+            <li><a href="#">天使 りん (ディーラー) / X</a></li>
+            <li><a href="#">グッズストア / Booth</a></li>
+            <li><a href="#">天使 りん / FANBOX</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-links">
+          <a href="contact.html">天使 りんへのお問い合わせ</a>
+          <a href="guidelines.html">ニ次創作ガイドライン</a>
+        </div>
+        <p class="footer__copyright">
+          &copy; 2026 Amatsuka Rin All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
 </html>

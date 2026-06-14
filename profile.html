@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile - 天使 りん</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kaisei+Opti:wght@400;700&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <button class="hamburger" aria-label="メニューを開く">
+        <img src="img/hamburger.svg" alt="" width="30" height="20" />
+      </button>
+    </header>
+
+    <nav class="menu-overlay">
+      <button class="menu-close" aria-label="メニューを閉じる">
+        <img src="img/close-button.svg" alt="" width="30" height="20" />
+      </button>
+      <div class="menu-overlay__inner">
+        <ul class="menu-overlay__list">
+          <li><a href="index.html">Top</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="index.html#schedules">Schedule</a></li>
+        </ul>
+        <div class="menu-overlay__sns">
+          <a href="#" aria-label="X"><img src="img/icon-x.svg" alt="X" width="39" height="40" /></a>
+          <a href="#" aria-label="YouTube"><img src="img/icon-youtube.svg" alt="YouTube" width="40" height="27" /></a>
+          <a href="#" aria-label="その他"><img src="img/icon-other.svg" alt="" width="48" height="48" /></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FV: イラストカルーセル + 名前 + 紹介文 -->
+    <section class="profile-fv">
+      <div class="profile-fv__carousel">
+        <button class="profile-fv__arrow profile-fv__arrow--prev" aria-label="前へ">&lt;</button>
+        <img src="img/main-visual1.png" alt="天使りん" class="profile-fv__image" />
+        <button class="profile-fv__arrow profile-fv__arrow--next" aria-label="次へ">&gt;</button>
+      </div>
+      <h1 class="profile-fv__name">天使 りん</h1>
+      <div class="profile-fv__text">
+        <p>あなたの心に降臨🌟</p>
+        <p>現役大学生VTuberの天使 りんです！<br>
+        ディーラーをやりながら、自分の「楽しい」を共有するためにVTuberをやっている天使のお嬢様🕊 ルシア家の当主でありながらも社会勉強のため人間界で配信活動をしている。ポーカー、歌メインでやってます✨</p>
+      </div>
+    </section>
+
+    <!-- 詳細プロフィール -->
+    <section class="profile-detail">
+      <div class="profile-detail__info">
+        <dl class="profile-detail__list">
+          <div class="profile-detail__row">
+            <dt>本名</dt>
+            <dd>ペルシア・ソルト・ルノワール</dd>
+          </div>
+          <div class="profile-detail__row">
+            <dt>愛称</dt>
+            <dd>ソルト, 天使 りん</dd>
+          </div>
+          <div class="profile-detail__row">
+            <dt>性別</dt>
+            <dd>女</dd>
+          </div>
+          <div class="profile-detail__row">
+            <dt>誕生日</dt>
+            <dd>11月26日</dd>
+          </div>
+          <div class="profile-detail__row">
+            <dt>年齢</dt>
+            <dd>18歳♡</dd>
+          </div>
+          <div class="profile-detail__row">
+            <dt>身長</dt>
+            <dd>155 cm</dd>
+          </div>
+        </dl>
+        <img src="img/mini-character.png" alt="" class="profile-detail__mini" />
+      </div>
+    </section>
+
+    <!-- 配信内容 & 活動内容 -->
+    <section class="profile-activity">
+      <div class="profile-activity__inner">
+        <div class="profile-activity__lists">
+          <div class="profile-activity__group">
+            <h2 class="profile-activity__title">配信内容</h2>
+            <ul class="profile-activity__items">
+              <li>ポーカーチェイス</li>
+              <li>VALORANT</li>
+              <li>キングダムハーツ</li>
+              <li>歌</li>
+              <li>雑談</li>
+            </ul>
+          </div>
+          <div class="profile-activity__group">
+            <h2 class="profile-activity__title">活動内容</h2>
+            <ul class="profile-activity__items">
+              <li>歌ってみた投稿</li>
+              <li>配信</li>
+              <li>ボイス販売</li>
+              <li>ロゴ制作</li>
+              <li>MV制作</li>
+              <li>サムネ制作 etc...</li>
+            </ul>
+          </div>
+        </div>
+        <img src="img/illustration-activity.png" alt="" class="profile-activity__illustration" />
+      </div>
+    </section>
+
+    <!-- HashTags -->
+    <section class="profile-hashtags">
+      <h2 class="profile-hashtags__title">HashTags</h2>
+      <p class="profile-hashtags__content">
+        ファンアートタグ　<a href="https://x.com/hashtag/%E5%A4%A9%E4%BD%BF%E3%81%AE%E7%B5%B5%E7%94%BB%E5%B1%95" target="_blank">#天使の絵画展</a><br>
+        配信タグ　<a href="https://x.com/hashtag/%E5%A4%A9%E4%BD%BF%E3%81%AE%E6%84%9F%E6%83%B3%E6%96%87" target="_blank">#天使の感想文</a>
+      </p>
+    </section>
+
+    <footer class="footer">
+      <h2 class="footer__name">天使 りん</h2>
+      <div class="footer__inner">
+        <nav class="footer__nav">
+          <ul>
+            <li><a href="index.html">Top</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="index.html#schedules">Schedule</a></li>
+          </ul>
+        </nav>
+        <div class="footer__divider"></div>
+        <div class="footer__links">
+          <ul>
+            <li><a href="#">天使 りん / YouTube</a></li>
+            <li><a href="#">天使 りん (VTuber) / X</a></li>
+            <li><a href="#">天使 りん (ディーラー) / X</a></li>
+            <li><a href="#">グッズストア / Booth</a></li>
+            <li><a href="#">天使 りん / FANBOX</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="footer__bottom-links">
+          <a href="contact.html">天使 りんへのお問い合わせ</a>
+          <a href="guidelines.html">ニ次創作ガイドライン</a>
+        </div>
+        <p class="footer__copyright">&copy; 2026 Amatsuka Rin All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
