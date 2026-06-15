@@ -90,12 +90,14 @@ img {
   z-index: 200;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s, visibility 0.4s;
+  transform: scale(0.97);
+  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
 }
 
 .menu-overlay.is-open {
   opacity: 1;
   visibility: visible;
+  transform: scale(1);
 }
 
 .menu-close {
@@ -112,12 +114,14 @@ img {
 
 .menu-overlay__inner {
   position: absolute;
-  top: 169px;
-  left: 66px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .menu-overlay__list {
   margin-bottom: 92px;
+  text-align: left;
 }
 
 .menu-overlay__list li {
@@ -139,6 +143,7 @@ img {
 .menu-overlay__sns {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 50px;
 }
 
@@ -504,6 +509,7 @@ img {
   background-color: rgba(255, 255, 255, 0.5);
   margin: 0 24px;
   align-self: stretch;
+  border-radius: 1px;
 }
 
 .footer__links ul {
