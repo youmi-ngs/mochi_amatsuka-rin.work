@@ -969,6 +969,14 @@ img {
   resize: vertical;
 }
 
+.contact-form__input::placeholder,
+.contact-form__textarea::placeholder {
+  color: var(--color-accent-blue);
+  font-family: var(--font-ja);
+  font-weight: 700;
+  font-size: 12px;
+}
+
 .contact-form__submit {
   text-align: center;
   margin-top: 30px;
