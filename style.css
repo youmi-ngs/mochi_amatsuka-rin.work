@@ -143,13 +143,14 @@ img {
    ヘッダー / ハンバーガー
    ======================================== */
 .header {
-  position: fixed;
-  top: 50px;
-  right: 30px;
+  position: relative;
   z-index: 100;
 }
 
 .hamburger {
+  position: fixed;
+  top: 50px;
+  right: 30px;
   display: block;
   background: none;
   border: none;
@@ -157,6 +158,7 @@ img {
   padding: 0;
   width: 30px;
   height: 20px;
+  z-index: 100;
 }
 
 .hamburger img {
