@@ -20,4 +20,28 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.style.overflow = "";
     });
   });
+
+  // プロフィールカルーセル
+  const images = document.querySelectorAll(".profile-fv__image");
+  const prevBtn = document.querySelector(".profile-fv__arrow--prev");
+  const nextBtn = document.querySelector(".profile-fv__arrow--next");
+
+  if (images.length > 0 && prevBtn && nextBtn) {
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach((img) => img.classList.remove("is-active"));
+      images[index].classList.add("is-active");
+    }
+
+    prevBtn.addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      showImage(current);
+    });
+  }
 });

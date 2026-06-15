@@ -567,10 +567,25 @@ img {
   margin-bottom: 20px;
 }
 
+.profile-fv__images {
+  position: relative;
+  width: 250px;
+  height: 455px;
+}
+
 .profile-fv__image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 250px;
   height: 455px;
   object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.profile-fv__image.is-active {
+  opacity: 1;
 }
 
 .profile-fv__arrow {
@@ -612,13 +627,12 @@ img {
 /* プロフィール詳細 */
 .profile-detail {
   background-color: var(--color-white);
-  padding: 40px var(--padding-x) 40px;
+  padding: 40px var(--padding-x);
+  position: relative;
 }
 
 .profile-detail__info {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+  display: block;
 }
 
 .profile-detail__list {
@@ -627,6 +641,7 @@ img {
 
 .profile-detail__row {
   display: flex;
+  align-items: center;
   gap: 20px;
   margin-bottom: 7px;
 }
@@ -638,17 +653,22 @@ img {
   letter-spacing: 0.5px;
   min-width: 31px;
   text-align: right;
+  white-space: nowrap;
 }
 
 .profile-detail__row dd {
   font-family: var(--font-ja);
   font-size: 12px;
   letter-spacing: 0.6px;
+  white-space: nowrap;
 }
 
 .profile-detail__mini {
-  width: 80px;
-  height: 84px;
+  position: absolute;
+  right: var(--padding-x);
+  bottom: 40px;
+  width: 120px;
+  height: 126px;
   object-fit: contain;
 }
 
