@@ -50,6 +50,95 @@ img {
   display: block;
 }
 
+/* スクロールフェードイン */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 動画ポップアップ */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.video-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.video-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.video-modal__content {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-modal__iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  font-size: 0;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
+.video-modal__close::before,
+.video-modal__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+}
+
+.video-modal__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.video-modal__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+}
+
 /* ========================================
    ヘッダー / ハンバーガー
    ======================================== */
@@ -145,6 +234,11 @@ img {
   font-weight: 700;
   color: var(--color-white);
   letter-spacing: 1.6px;
+  transition: text-shadow 0.3s;
+}
+
+.menu-overlay__list a:hover {
+  text-shadow: 0 0 20px rgba(246, 226, 138, 0.8), 0 0 40px rgba(246, 226, 138, 0.4);
 }
 
 .menu-overlay__sns {
@@ -156,6 +250,11 @@ img {
 
 .menu-overlay__sns img {
   filter: brightness(0) invert(1);
+  transition: filter 0.3s;
+}
+
+.menu-overlay__sns a:hover img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(246, 226, 138, 1));
 }
 
 /* ========================================
@@ -368,6 +467,11 @@ img {
 
 .videos__item {
   display: block;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
 }
 
 .videos__thumbnail {
@@ -450,10 +554,36 @@ img {
   letter-spacing: 0.6px;
   text-decoration: underline;
   margin-top: 20px;
+  transition: color 0.3s;
+}
+
+.schedules__subscribe:hover {
+  color: var(--color-text);
 }
 
 .schedules__play-icon {
   width: 13px;
+  position: relative;
+}
+
+.schedules__play-icon-default,
+.schedules__play-icon-hover {
+  transition: opacity 0.3s;
+}
+
+.schedules__play-icon-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.schedules__subscribe:hover .schedules__play-icon-default {
+  opacity: 0;
+}
+
+.schedules__subscribe:hover .schedules__play-icon-hover {
+  opacity: 1;
   height: 15px;
 }
 
@@ -744,11 +874,10 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  top: 7px;
-  width: 8px;
-  height: 8px;
-  background-color: var(--color-accent-blue);
-  border-radius: 50%;
+  top: 6px;
+  width: 12px;
+  height: 11px;
+  background: url("img/heart-bullet.svg") no-repeat center / contain;
 }
 
 .profile-activity__illustration {
@@ -1221,6 +1350,7 @@ img {
     padding: 15px 40px;
     background-color: var(--color-main);
     backdrop-filter: blur(10px);
+    z-index: 150;
   }
 
   .hamburger {
@@ -1235,6 +1365,11 @@ img {
     color: var(--color-white);
     letter-spacing: 1.2px;
     margin-right: auto;
+    transition: opacity 0.3s;
+  }
+
+  .desktop-logo:hover {
+    text-shadow: 0 0 15px rgba(246, 226, 138, 1), 0 0 30px rgba(246, 226, 138, 0.7);
   }
 
   .desktop-nav {
@@ -1253,7 +1388,7 @@ img {
   }
 
   .desktop-nav a:hover {
-    opacity: 0.7;
+    text-shadow: 0 0 15px rgba(246, 226, 138, 1), 0 0 30px rgba(246, 226, 138, 0.7);
   }
 
   .desktop-sns {
@@ -1272,7 +1407,7 @@ img {
   }
 
   .desktop-sns a:hover img {
-    opacity: 0.7;
+    filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(246, 226, 138, 1));
   }
 
   /* 全セクション共通: パディングで中央寄せ、コンテンツ760px */

@@ -21,6 +21,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // スクロールフェードイン
+  const fadeElements = document.querySelectorAll(".fade-in");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  fadeElements.forEach((el) => observer.observe(el));
+
+  // 動画ポップアップ
+  const videoModal = document.querySelector(".video-modal");
+  const videoIframe = document.querySelector(".video-modal__iframe");
+  const videoClose = document.querySelector(".video-modal__close");
+  const videoOverlay = document.querySelector(".video-modal__overlay");
+  const videoItems = document.querySelectorAll(".videos__item[data-video]");
+
+  if (videoModal && videoItems.length > 0) {
+    videoItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        videoIframe.src = item.dataset.video;
+        videoModal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    function closeVideo() {
+      videoModal.classList.remove("is-open");
+      videoIframe.src = "";
+      document.body.style.overflow = "";
+    }
+
+    videoClose.addEventListener("click", closeVideo);
+    videoOverlay.addEventListener("click", closeVideo);
+  }
+
   // プロフィールカルーセル
   const images = document.querySelectorAll(".profile-fv__image");
   const prevBtn = document.querySelector(".profile-fv__arrow--prev");

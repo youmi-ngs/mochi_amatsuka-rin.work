@@ -28,7 +28,7 @@
       </nav>
       <div class="desktop-sns">
         <a href="https://x.com/soruto_1126" target="_blank"><img src="img/sns-icon/logo.svg" alt="X" /></a>
-        <a href="https://www.youtube.com/@-amatukarin1126" target="_blank"><img src="img/sns-icon/youtube.png" alt="YouTube" /></a>
+        <a href="https://www.youtube.com/@-amatukarin1126" target="_blank"><img src="img/sns-icon/youtube.webp" alt="YouTube" /></a>
         <a href="https://perushia.booth.pm" target="_blank"><img src="img/sns-icon/booth.svg" alt="Booth" /></a>
       </div>
     </header>
@@ -50,7 +50,7 @@
             <img src="img/sns-icon/logo.svg" alt="X" width="39" height="40" />
           </a>
           <a href="https://www.youtube.com/@-amatukarin1126" target="_blank" aria-label="YouTube">
-            <img src="img/sns-icon/youtube.png" alt="YouTube" width="40" height="27" />
+            <img src="img/sns-icon/youtube.webp" alt="YouTube" width="40" height="27" />
           </a>
           <a href="https://perushia.booth.pm" target="_blank" aria-label="Booth">
             <img src="img/sns-icon/booth.svg" alt="Booth" width="48" height="48" />
@@ -62,20 +62,20 @@
     <!-- ファーストビュー -->
     <section class="hero">
       <div class="hero__bg">
-        <img src="img/fv_bg.jpg" alt="" class="hero__bg-img" />
+        <img src="img/fv_bg.webp" alt="" class="hero__bg-img" />
       </div>
       <div class="hero__content">
-        <img src="img/fv_main.png" alt="天使りん" class="hero__character" />
-        <img src="img/fv_logo.png" alt="Rin Amatsuka" class="hero__logo" />
+        <img src="img/fv_main.webp" alt="天使りん" class="hero__character" />
+        <img src="img/fv_logo.webp" alt="Rin Amatsuka" class="hero__logo" />
       </div>
     </section>
     <div class="wave wave--hero"></div>
 
     <!-- プロフィール紹介 -->
-    <section class="intro">
+    <section class="intro fade-in">
       <div class="intro__visual">
         <img
-          src="img/main-visual_face.png"
+          src="img/main-visual_face.webp"
           alt="天使りん"
           class="intro__character"
         />
@@ -90,33 +90,33 @@
     <div class="wave wave--base-to-white"></div>
 
     <!-- Videos -->
-    <section class="videos">
+    <section class="videos fade-in">
       <div class="videos__inner">
         <h2 class="section-title">Videos</h2>
         <div class="videos__list">
-          <a href="#" class="videos__item">
+          <button class="videos__item" data-video="https://www.youtube.com/embed/2iGnBkagjB4?autoplay=1">
             <img
-              src="img/youtube_thumb2.jpg"
+              src="img/youtube_thumb2.webp"
               alt=""
               class="videos__thumbnail"
             />
             <p class="videos__caption">ロミオとシンデレラ/天使りん(cover)</p>
-          </a>
-          <a href="#" class="videos__item">
+          </button>
+          <button class="videos__item" data-video="https://www.youtube.com/embed/2iGnBkagjB4?autoplay=1">
             <img
-              src="img/youtube_thumb2.jpg"
+              src="img/youtube_thumb2.webp"
               alt=""
               class="videos__thumbnail"
             />
             <p class="videos__caption">ロミオとシンデレラ/天使りん(cover)</p>
-          </a>
+          </button>
         </div>
       </div>
     </section>
     <div class="wave wave--white-to-base"></div>
 
     <!-- Schedules -->
-    <section class="schedules" id="schedules">
+    <section class="schedules fade-in" id="schedules">
       <h2 class="section-title">Schedules</h2>
       <div class="schedules__list">
         <div class="schedules__item">
@@ -137,26 +137,32 @@
         class="schedules__subscribe"
         target="_blank"
       >
-        <img
-          src="img/play-icon.svg"
-          alt=""
-          class="schedules__play-icon"
-          width="13"
-          height="15"
-        />
+        <span class="schedules__play-icon">
+          <img src="img/play-icon.svg" alt="" class="schedules__play-icon-default" width="13" height="15" />
+          <img src="img/play-icon-hover.svg" alt="" class="schedules__play-icon-hover" width="13" height="15" />
+        </span>
         <span>Subscribe YouTube</span>
       </a>
     </section>
     <div class="wave wave--base-to-white2"></div>
 
     <!-- Contact -->
-    <section class="contact">
+    <section class="contact fade-in">
       <h2 class="section-title">Contact Rin</h2>
       <div class="contact__inner">
         <a href="contact.html" class="btn btn--contact">お問い合わせフォーム</a>
         <p class="contact__note">案件＆コラボ大募集中です！</p>
       </div>
     </section>
+
+    <!-- 動画ポップアップ -->
+    <div class="video-modal">
+      <div class="video-modal__overlay"></div>
+      <div class="video-modal__content">
+        <button class="video-modal__close">&times;</button>
+        <iframe class="video-modal__iframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </div>
 
     <!-- フッター -->
     <footer class="footer">
