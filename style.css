@@ -91,7 +91,10 @@ img {
   opacity: 0;
   visibility: hidden;
   transform: scale(0.97);
-  transition: opacity 0.5s ease, visibility 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease,
+    transform 0.5s ease;
 }
 
 .menu-overlay.is-open {
@@ -154,30 +157,41 @@ img {
 /* ========================================
    スカラップ波ボーダー
    ======================================== */
-/* スカラップ波ボーダー */
+/* スカラップ波ボーダー
+   上のセクションの色の半円が下に垂れ下がる
+   background-color = 下のセクションの色（隙間を埋める）
+   SVG circle = 上のセクションの色（半円が垂れる） */
 .wave {
   width: 100%;
   height: 30px;
-  margin-bottom: -30px;
   position: relative;
   z-index: 10;
-  background-size: 60px 30px;
   background-repeat: repeat-x;
+  background-size: 60px 30px;
 }
 
-/* FVの青が下に垂れる */
-.wave--blue {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cellipse cx='30' cy='30' rx='31' ry='30' fill='%23b8dce8'/%3E%3C/svg%3E");
+/* hero(青) → intro(ベース) */
+.wave--hero {
+  background-color: var(--color-base);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Ccircle cx='30' cy='0' r='30' fill='%2378B6FF'/%3E%3C/svg%3E");
 }
 
-/* ベース色が下に垂れる */
-.wave--base {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cellipse cx='30' cy='30' rx='31' ry='30' fill='%23f2faff'/%3E%3C/svg%3E");
+/* intro(ベース) → videos(白) */
+.wave--base-to-white {
+  background-color: var(--color-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Ccircle cx='30' cy='0' r='30' fill='%23f2faff'/%3E%3C/svg%3E");
 }
 
-/* 白が下に垂れる */
-.wave--white {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Cellipse cx='30' cy='30' rx='31' ry='30' fill='%23ffffff'/%3E%3C/svg%3E");
+/* videos(白) → schedules(ベース) */
+.wave--white-to-base {
+  background-color: var(--color-base);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Ccircle cx='30' cy='0' r='30' fill='%23ffffff'/%3E%3C/svg%3E");
+}
+
+/* schedules(ベース) → contact(白) */
+.wave--base-to-white2 {
+  background-color: var(--color-white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Ccircle cx='30' cy='0' r='30' fill='%23f2faff'/%3E%3C/svg%3E");
 }
 
 /* ========================================
@@ -232,7 +246,6 @@ img {
   bottom: 15%;
   z-index: 3;
 }
-
 
 /* ========================================
    プロフィール紹介
@@ -289,7 +302,9 @@ img {
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(107, 138, 158, 0.2);
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
   text-decoration: none;
 }
 
@@ -594,10 +609,9 @@ img {
   transform: translateY(-50%);
   background: none;
   border: none;
-  font-size: 20px;
-  color: var(--color-main);
   cursor: pointer;
   padding: 10px;
+  z-index: 2;
 }
 
 .profile-fv__arrow--prev {
