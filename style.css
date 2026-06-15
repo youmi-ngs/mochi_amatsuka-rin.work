@@ -32,8 +32,6 @@ body {
   background-color: var(--color-base);
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
-  max-width: 390px;
-  margin: 0 auto;
   overflow-x: hidden;
 }
 
@@ -58,7 +56,7 @@ img {
 .header {
   position: fixed;
   top: 50px;
-  right: calc((100vw - 390px) / 2 + 30px);
+  right: 30px;
   z-index: 100;
 }
 
@@ -75,6 +73,12 @@ img {
 .hamburger img {
   width: 30px;
   height: 20px;
+}
+
+.desktop-nav,
+.desktop-sns,
+.desktop-logo {
+  display: none;
 }
 
 /* ========================================
@@ -622,6 +626,10 @@ img {
   right: 0;
 }
 
+.profile-fv__info {
+  flex: 1;
+}
+
 .profile-fv__name {
   font-family: var(--font-ja);
   font-size: 24px;
@@ -694,10 +702,12 @@ img {
 .profile-activity__inner {
   display: flex;
   gap: 20px;
+  position: relative;
 }
 
 .profile-activity__lists {
   flex: 1;
+  margin-right: 200px;
 }
 
 .profile-activity__group {
@@ -741,16 +751,19 @@ img {
 }
 
 .profile-activity__illustration {
-  width: 142px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 180px;
   border-radius: 5px;
   object-fit: cover;
-  align-self: stretch;
 }
 
 /* HashTags */
 .profile-hashtags {
   background-color: var(--color-white);
-  padding: 40px var(--padding-x);
+  padding: 80px var(--padding-x) 100px;
 }
 
 .profile-hashtags__title {
@@ -758,14 +771,14 @@ img {
   font-size: 20px;
   font-weight: 400;
   letter-spacing: 1px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .profile-hashtags__content {
   font-family: var(--font-ja);
   font-size: 12px;
   letter-spacing: 0.6px;
-  line-height: 20px;
+  line-height: 28px;
 }
 
 .profile-hashtags__content a {
@@ -860,7 +873,7 @@ img {
 
 .achievements-event {
   background-color: var(--color-white);
-  padding: 40px var(--padding-x);
+  padding: 40px var(--padding-x) 100px;
   text-align: center;
 }
 
@@ -875,7 +888,7 @@ img {
    お問い合わせページ
    ======================================== */
 .contact-page {
-  padding: 100px var(--padding-x) 40px;
+  padding: 100px var(--padding-x) 100px;
 }
 
 .contact-page__header {
@@ -957,7 +970,7 @@ img {
    ガイドラインページ
    ======================================== */
 .guidelines {
-  padding: 100px var(--padding-x) 40px;
+  padding: 100px var(--padding-x) 100px;
 }
 
 .guidelines__title {
@@ -1018,4 +1031,458 @@ img {
   font-size: 12px;
   letter-spacing: 0.6px;
   line-height: 20px;
+}
+
+/* ========================================
+   メディアクエリ: タブレット (768px~)
+   ======================================== */
+@media (min-width: 768px) {
+  :root {
+    --padding-x: 80px;
+  }
+
+  /* ヒーロー: bgを下寄せ */
+  .hero {
+    height: 80svh;
+  }
+
+  .hero__bg-img {
+    object-position: center bottom;
+  }
+
+  .hero__character {
+    width: 140%;
+  }
+
+  /* プロフィール紹介 */
+  .intro__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /* Videos: 2カラム横並び */
+  .videos__list {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .videos__item {
+    flex: 1;
+  }
+
+  .videos__thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 290 / 163;
+  }
+
+  .videos__caption {
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  /* Schedules: 箱を大きく、h中揃え */
+  .schedules {
+    padding-left: var(--padding-x);
+    padding-right: var(--padding-x);
+  }
+
+  .schedules .section-title {
+    text-align: center;
+  }
+
+  .schedules__item {
+    width: 100%;
+    padding: 24px 30px;
+  }
+
+  .schedules__list {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .schedules__subscribe {
+    text-align: center;
+  }
+
+  /* フッター */
+  .footer__inner {
+    gap: 0;
+  }
+
+  .footer__bottom-links a {
+    font-size: 9px;
+  }
+
+  .footer__copyright {
+    font-size: 10px;
+  }
+
+  /* プロフィールページ: FV横並び */
+  .profile-fv {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    padding-top: 60px;
+  }
+
+  .profile-fv__carousel {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+  }
+
+  .profile-fv__images {
+    width: 400px;
+    height: 727px;
+  }
+
+  .profile-fv__image {
+    width: 400px;
+    height: 727px;
+  }
+
+  .profile-fv__name {
+    font-size: 28px;
+  }
+
+  /* 実績ページ: 2カラム */
+  .achievements__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .achievements__ambassador-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .achievements__event-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  /* お問い合わせ */
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* ガイドライン */
+  .guidelines {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* ========================================
+   メディアクエリ: デスクトップ (1024px~)
+   ======================================== */
+@media (min-width: 1024px) {
+  :root {
+    --padding-x: 120px;
+  }
+
+  /* ハンバーガー非表示、デスクトップナビ表示 */
+  .header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 40px;
+    background-color: var(--color-main);
+    backdrop-filter: blur(10px);
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .desktop-logo {
+    display: block;
+    font-family: var(--font-ja);
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--color-white);
+    letter-spacing: 1.2px;
+    margin-right: auto;
+  }
+
+  .desktop-nav {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .desktop-nav a {
+    font-family: var(--font-en);
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--color-white);
+    letter-spacing: 0.75px;
+    transition: opacity 0.3s;
+  }
+
+  .desktop-nav a:hover {
+    opacity: 0.7;
+  }
+
+  .desktop-sns {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-left: 40px;
+  }
+
+  .desktop-sns img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    transition: opacity 0.3s;
+  }
+
+  .desktop-sns a:hover img {
+    opacity: 0.7;
+  }
+
+  /* 全セクション共通: パディングで中央寄せ、コンテンツ760px */
+  :root {
+    --padding-x: max(80px, calc((100vw - 760px) / 2));
+  }
+
+  /* ヒーロー */
+  .hero {
+    height: 100svh;
+  }
+
+  .hero__character {
+    width: 100%;
+    max-width: 800px;
+  }
+
+  .hero__logo {
+    max-width: 400px;
+  }
+
+  /* 紹介セクション */
+  .intro {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .intro__character {
+    width: 240px;
+    height: 240px;
+  }
+
+  .intro__name {
+    font-size: 28px;
+  }
+
+  .intro__text {
+    font-size: 14px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+
+  /* Videos */
+  .videos__inner {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .videos__thumbnail {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 290 / 163;
+  }
+
+  .section-title {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  /* Schedules */
+  .schedules {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .schedules__item {
+    padding: 28px 40px;
+    text-align: center;
+  }
+
+  /* Contact (トップページ) */
+  .contact {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  /* フッター */
+  .footer__name {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer__divider {
+    display: none;
+  }
+
+  .footer__nav ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .footer__nav a {
+    font-size: 16px;
+  }
+
+  .footer__links ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+  }
+
+  .footer__links a {
+    font-size: 12px;
+  }
+
+  .footer__bottom {
+    text-align: center;
+  }
+
+  .footer__bottom-links {
+    justify-content: center;
+  }
+
+  /* プロフィールページ */
+  .profile-fv {
+    gap: 60px;
+  }
+
+  .profile-fv__images {
+    width: 400px;
+    height: 727px;
+  }
+
+  .profile-fv__image {
+    width: 400px;
+    height: 727px;
+  }
+
+  .profile-fv__name {
+    font-size: 32px;
+  }
+
+  .profile-fv__text {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  /* プロフィール詳細 */
+  .profile-detail {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: max(80px, calc((100vw - 500px) / 2));
+    padding-right: max(80px, calc((100vw - 500px) / 2));
+  }
+
+  .profile-detail__info {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .profile-detail__list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .profile-detail__mini {
+    position: static;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    align-self: center;
+  }
+
+  .profile-detail__row dt {
+    font-size: 12px;
+  }
+
+  .profile-detail__row dd {
+    font-size: 14px;
+  }
+
+  /* 活動内容 */
+  .profile-activity {
+    padding-left: max(80px, calc((100vw - 500px) / 2));
+    padding-right: max(80px, calc((100vw - 500px) / 2));
+  }
+
+  .profile-activity__illustration {
+    width: 200px;
+  }
+
+  /* ハッシュタグ */
+  .profile-hashtags {
+    text-align: center;
+  }
+
+  /* 実績ページ */
+  .achievements__item-title {
+    font-size: 16px;
+  }
+
+  .achievements__item-desc {
+    font-size: 14px;
+  }
+
+  .achievements__section-title {
+    font-size: 28px;
+  }
+
+  /* お問い合わせページ */
+  .contact-page__name {
+    font-size: 28px;
+  }
+
+  .contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .contact-form__input {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .contact-form__textarea {
+    height: 150px;
+    font-size: 14px;
+  }
 }
