@@ -53,13 +53,11 @@ img {
 /* スクロールフェードイン */
 .fade-in {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.8s ease;
 }
 
 .fade-in.is-visible {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* 動画ポップアップ */
@@ -273,6 +271,21 @@ img {
   z-index: 10;
   background-repeat: repeat-x;
   background-size: 60px 30px;
+  display: block;
+}
+
+/* 波の上下の隙間を防ぐ */
+.wave--hero {
+  box-shadow: 0 1px 0 0 var(--color-base);
+}
+
+.wave--base-to-white,
+.wave--base-to-white2 {
+  box-shadow: 0 1px 0 0 var(--color-white), 0 -1px 0 0 var(--color-base);
+}
+
+.wave--white-to-base {
+  box-shadow: 0 1px 0 0 var(--color-base), 0 -1px 0 0 var(--color-white);
 }
 
 /* hero(青) → intro(ベース) */
@@ -369,8 +382,9 @@ img {
 }
 
 .intro__character {
-  width: 200px;
-  height: 199px;
+  width: clamp(140px, 50vw, 200px);
+  height: auto;
+  aspect-ratio: 200 / 199;
   object-fit: contain;
 }
 
@@ -721,16 +735,16 @@ img {
 
 .profile-fv__images {
   position: relative;
-  width: 250px;
-  height: 455px;
+  width: clamp(180px, 60vw, 250px);
+  aspect-ratio: 250 / 455;
 }
 
 .profile-fv__image {
   position: absolute;
   top: 0;
   left: 0;
-  width: 250px;
-  height: 455px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
   opacity: 0;
   transition: opacity 0.5s ease;
@@ -813,17 +827,17 @@ img {
 
 .profile-detail__row dd {
   font-family: var(--font-ja);
-  font-size: 12px;
+  font-size: clamp(10px, 3vw, 12px);
   letter-spacing: 0.6px;
-  white-space: nowrap;
 }
 
 .profile-detail__mini {
   position: absolute;
   right: var(--padding-x);
   bottom: 40px;
-  width: 120px;
-  height: 126px;
+  width: clamp(80px, 25vw, 120px);
+  height: auto;
+  aspect-ratio: 120 / 126;
   object-fit: contain;
 }
 
@@ -834,13 +848,14 @@ img {
 
 .profile-activity__inner {
   display: flex;
+  flex-direction: row;
   gap: 20px;
   position: relative;
 }
 
 .profile-activity__lists {
   flex: 1;
-  margin-right: 200px;
+  margin-right: clamp(100px, 35vw, 180px);
 }
 
 .profile-activity__group {
@@ -887,9 +902,10 @@ img {
   right: 0;
   top: 0;
   height: 100%;
-  width: 180px;
+  width: clamp(80px, 30vw, 180px);
   border-radius: 5px;
   object-fit: cover;
+  object-position: center bottom;
 }
 
 /* HashTags */
@@ -1179,6 +1195,25 @@ img {
   font-size: 12px;
   letter-spacing: 0.6px;
   line-height: 20px;
+}
+
+/* ========================================
+   メディアクエリ: 極小 (~360px)
+   ======================================== */
+@media (max-width: 360px) {
+  .profile-activity__inner {
+    flex-direction: column;
+  }
+
+  .profile-activity__lists {
+    margin-right: 0;
+  }
+
+  .profile-activity__illustration {
+    position: static;
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* ========================================
@@ -1602,7 +1637,20 @@ img {
     padding-right: max(80px, calc((100vw - 500px) / 2));
   }
 
+  .profile-activity__inner {
+    flex-direction: row;
+    position: relative;
+  }
+
+  .profile-activity__lists {
+    margin-right: 220px;
+  }
+
   .profile-activity__illustration {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
     width: 200px;
   }
 
