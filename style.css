@@ -488,6 +488,7 @@ img {
   padding: 0;
   cursor: pointer;
   text-align: center;
+  color: var(--color-text);
 }
 
 .videos__thumbnail {
