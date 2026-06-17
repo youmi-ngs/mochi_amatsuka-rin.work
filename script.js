@@ -84,4 +84,15 @@ document.addEventListener("DOMContentLoaded", () => {
       showImage(current);
     });
   }
+
+  // お問い合わせフォーム送信
+  const contactForm = document.querySelector(".contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", () => {
+      setTimeout(() => {
+        contactForm.reset();
+        alert("送信完了しました。お問い合わせありがとうございます！");
+      }, 500);
+    });
+  }
 });

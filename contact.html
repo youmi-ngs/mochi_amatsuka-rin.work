@@ -60,27 +60,28 @@
         一般の方のファンレター等は、<br>
         <a href="https://marshmallow-qa.com/soruto_1126" target="_blank" class="contact-page__marshmallow">マシュマロ</a>までお願いいたします。
       </p>
-      <form class="contact-form">
+      <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLScp_-XG-SLUEUQSD8ZHbWNvI-WHbWoY50k10ewc-P2Lwdg0cA/formResponse" method="POST" target="hidden_iframe">
         <div class="contact-form__group">
           <label class="contact-form__label" for="company">企業・団体名</label>
-          <input type="text" id="company" class="contact-form__input" placeholder="秘密結社マシュマロ" />
+          <input type="text" id="company" name="entry.1662911058" class="contact-form__input" placeholder="秘密結社マシュマロ" />
         </div>
         <div class="contact-form__group">
           <label class="contact-form__label" for="name">氏名</label>
-          <input type="text" id="name" class="contact-form__input" placeholder="天使 りん" />
+          <input type="text" id="name" name="entry.839378828" class="contact-form__input" placeholder="天使 りん" required />
         </div>
         <div class="contact-form__group">
           <label class="contact-form__label" for="email">メールアドレス</label>
-          <input type="email" id="email" class="contact-form__input" placeholder="cute.rin@example.com" />
+          <input type="email" id="email" name="entry.447800952" class="contact-form__input" placeholder="cute.rin@example.com" required />
         </div>
         <div class="contact-form__group">
           <label class="contact-form__label" for="message">お問い合わせ内容</label>
-          <textarea id="message" class="contact-form__textarea" placeholder="入力してください"></textarea>
+          <textarea id="message" name="entry.175000276" class="contact-form__textarea" placeholder="入力してください" required></textarea>
         </div>
         <div class="contact-form__submit">
           <button type="submit" class="btn btn--send">送信</button>
         </div>
       </form>
+      <iframe name="hidden_iframe" style="display:none;"></iframe>
     </section>
 
     <footer class="footer">
