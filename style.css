@@ -141,7 +141,7 @@ img {
    ヘッダー / ハンバーガー
    ======================================== */
 .header {
-  position: relative;
+  position: absolute;
   z-index: 100;
 }
 
