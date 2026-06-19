@@ -507,6 +507,11 @@ img {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 50px;
+  transition: color 0.3s ease;
+}
+
+.videos__item:hover .videos__caption {
+  color: var(--color-main);
 }
 
 .videos__item:last-child .videos__caption {
