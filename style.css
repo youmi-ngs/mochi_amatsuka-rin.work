@@ -546,6 +546,10 @@ img {
   width: 100%;
 }
 
+.schedules__item--tbd {
+  text-align: center;
+}
+
 .schedules__date {
   font-family: var(--font-ja);
   font-size: 12px;
