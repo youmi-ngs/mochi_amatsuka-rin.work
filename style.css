@@ -648,6 +648,11 @@ img {
 
 .footer a {
   color: var(--color-footer-text);
+  transition: text-shadow 0.3s;
+}
+
+.footer a:hover {
+  text-shadow: 0 0 15px rgba(246, 226, 138, 1), 0 0 30px rgba(246, 226, 138, 0.7);
 }
 
 .footer__name {
