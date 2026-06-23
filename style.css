@@ -693,6 +693,11 @@ img {
   gap: 4px;
 }
 
+/* デスクトップで横並び折り返しになるときだけ使う改行用要素 */
+.footer__links-break {
+  display: none;
+}
+
 .footer__links a {
   font-family: var(--font-ja);
   font-size: 10px;
@@ -1564,6 +1569,13 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px 24px;
+  }
+
+  /* 3つ目の後で折り返し、Booth と FANBOX を同じ行に */
+  .footer__links-break {
+    display: block;
+    flex-basis: 100%;
+    height: 0;
   }
 
   .footer__links a {
