@@ -1459,7 +1459,7 @@ img {
     height: 20px;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    transition: opacity 0.3s;
+    transition: filter 0.3s;
   }
 
   .desktop-sns a:hover img {
