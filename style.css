@@ -971,7 +971,7 @@ img {
 .achievements__list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 26px;
 }
 
 .achievements__item {
@@ -1055,7 +1055,7 @@ img {
 .achievements__event-list {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 18px;
   align-items: center;
 }
 
@@ -1351,23 +1351,29 @@ img {
     font-size: 28px;
   }
 
-  /* 実績ページ: 2カラム */
+  /* 実績ページ: すべて1カラム（幅を絞って中央寄せ・コンパクトに） */
+  .achievements__list,
+  .achievements__ambassador-list,
+  .achievements__event-list {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .achievements__list {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 26px;
   }
 
   .achievements__ambassador-list {
-    flex-direction: row;
-    justify-content: center;
-    gap: 60px;
+    flex-direction: column;
+    gap: 18px;
   }
 
   .achievements__event-list {
-    flex-direction: row;
-    justify-content: center;
-    gap: 60px;
+    flex-direction: column;
+    gap: 18px;
   }
 
   /* お問い合わせ */
